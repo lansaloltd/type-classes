@@ -22,6 +22,9 @@ class ImplicitBehavioursApiTest extends FreeSpec with Matchers {
     "can fly" in {
       parrot.fly
     }
+    "can talk" in {
+      parrot.talk
+    }
     "but it can't swim" in {
       // parrot.swim -> compilation error
     }
@@ -30,6 +33,9 @@ class ImplicitBehavioursApiTest extends FreeSpec with Matchers {
   "A Kakapo" - {
     "is still a parrot" in {
       kakapo.isInstanceOf[Parrot] shouldBe true
+    }
+    "can talk" in {
+      kakapo.talk
     }
     "but unfortunately it can't fly" in {
       // kakapo.fly -> compilation error

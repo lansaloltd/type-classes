@@ -21,7 +21,10 @@ class MoreExplicitBehavioursApiTest extends FreeSpec with Matchers {
 
   "A Parrot" - {
     "can fly" in {
-      flyOps(parrot)(parrotBehaviour)
+      flyOps(parrot)(parrotFly)
+    }
+    "can talk" in {
+      talkOps(parrot)(parrotTalk)
     }
     "but it can't swim" in {
       // swimOps(parrot)(?) -> compilation error
@@ -31,6 +34,9 @@ class MoreExplicitBehavioursApiTest extends FreeSpec with Matchers {
   "A Kakapo" - {
     "is still a parrot" in {
       kakapo.isInstanceOf[Parrot] shouldBe true
+    }
+    "and can talk" in {
+      talkOps(kakapo)(kakapoTalk)
     }
     "but unfortunately it can't fly" in {
       // flyOps(kakapo)(?) -> compilation error
